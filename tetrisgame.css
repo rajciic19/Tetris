@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('tetris-dodatno/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1, h2{
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+#lastResultTable{
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+#gameArea {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 110px;
+}
+#infoArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+}
+#gameInfo {
+    width: 200px;
+    height: 100px;
+    font-family: "Cursive";
+    font-size: 32px;
+    color: #fff;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#gameInfo p {
+    margin: 10px 0;
+}
+
+#resultTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#resultTable th,
+#resultTable td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #6c618686;
+    border-radius: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #bbc4bc73;
+}
+
+.spacing{
+    margin: 10px;
+
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form select {
+    margin-left: 10px;
+}
+
+.centered {
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.block-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.info {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.block-options label {
+    margin: 0 10px;
+}
+
+
+#resultTable {
+    margin: 20px auto;
+    width: 50%;
+}
+
+
+.row, .next-row{
+    display: flex;
+}
+
+.cell, .next-cell{
+    width: 50px; 
+    height: 50px; 
+    background-color: rgba(0, 0, 0, 0); 
+    border: 0.5px solid #bdb3b3;
+    border-radius: 30px;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    border: 0.5px solid #bdb3b3;
+    border-radius: 30px;
+  }
+  
+  .block.I {
+    background-color: cyan;
+  }
+  
+  .block.O {
+    background-color: yellow;
+  }
+  
+  .block.T {
+    background-color: purple;
+  }
+  
+  .block.S {
+    background-color: green;
+  }
+  
+  .block.Z {
+    background-color: red;
+  }
+  
+  .block.J {
+    background-color: blue;
+  }
+  
+  .block.L {
+    background-color: orange;
+  }
+  
+
+
+  .block-option {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(2, 50px);
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .block-option.selected .block {
+    border: 2px solid black;
+  }
+
+  .block-option[data-block="I"] {
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: 50px;
+  }
+  
+  .block-option[data-block="O"] {
+    grid-template-columns: repeat(2, 50px);
+    grid-template-rows: repeat(2, 50px);
+  }
+  
+  .block-option[data-block="T"],
+  .block-option[data-block="S"],
+  .block-option[data-block="Z"],
+  .block-option[data-block="J"],
+  .block-option[data-block="L"] {
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(2, 50px);
+  }
+
+  .block-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+
+  .level-select {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .level-select select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+  }
+  
+  .level-select select:focus {
+    outline: none;
+    border-color: #5c9eff;
+    box-shadow: 0 0 5px rgba(92, 158, 255, 0.5);
+  }
+  
+  .level-select select option {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+  }

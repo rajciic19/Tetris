@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tetris - Uputstvo</title>
+    <link rel="stylesheet" type="text/css" href="tetrisgame.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="tetris-uputstvo.js"></script>
+</head>
+<body>
+    <audio id="backgroundMusic" loop>
+        <source src="tetris-dodatno/tetrismuzika.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button onclick="document.getElementById('backgroundMusic').play()">Play Music</button>
+    <div class="info">
+        <h1>Tetris - Uputstvo</h1>
+        <p class="centered">Dobrodošli u igru Tetris!</p>
+        <p class="centered">Cilj igre je slaganje blokova koji padaju odozgo kako bi se popunili celi redovi.</p>
+        <p class="centered">Kada se red popuni, on nestaje i svi blokovi iznad se spuštaju.</p>
+        <p class="centered">Igra se završava kada se blokovi nagomilaju do vrha.</p>
+        <h2 class="centered">Kontrole:</h2>
+        <ul class="centered">
+            <li>Levo - Pomeranje bloka ulevo</li>
+            <li>Desno - Pomeranje bloka udesno</li>
+            <li>Dole - Ubrzavanje pada bloka</li>
+            <li>Gore - Rotiranje bloka</li>
+        </ul>
+    </div>
+
+    <div class="spacing"></div> 
+    <form>
+        <h2 class="centered">Podešavanja:</h2>
+        <div class="block-options">
+            <div class="block-row">
+              <div class="block-option" data-block="I">
+            <div class="block I"></div>
+            <div class="block I"></div>
+            <div class="block I"></div>
+            <div class="block I"></div>
+              </div>
+              <div class="block-option" data-block="O">
+            <div class="block O"></div>
+            <div class="block O"></div>
+            <div class="block O"></div>
+            <div class="block O"></div>
+              </div>
+              <div class="block-option" data-block="T">
+            <div class="block"></div>
+            <div class="block T"></div>
+            <div class="block"></div>
+            <div class="block T"></div>
+            <div class="block T"></div>
+            <div class="block T"></div>
+              </div>
+              <div class="block-option" data-block="S">
+            <div class="block"></div>
+            <div class="block S"></div>
+            <div class="block S"></div>
+            <div class="block S"></div>
+            <div class="block S"></div>
+            <div class="block"></div>
+              </div>
+            </div>
+            <div class="block-row">
+              <div class="block-option" data-block="Z">
+            <div class="block Z"></div>
+            <div class="block Z"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block Z"></div>
+            <div class="block Z"></div>
+              </div>
+              <div class="block-option" data-block="J">
+            <div class="block J"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block J"></div>
+            <div class="block J"></div>
+            <div class="block J"></div>
+              </div>
+              <div class="block-option" data-block="L">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block L"></div>
+            <div class="block L"></div>
+            <div class="block L"></div>
+            <div class="block L"></div>
+              </div>
+            </div>
+          </div>
+            <h2 class="centered">Nivo:</h2>
+            <div class="level-select">
+                <select id="level" name="level">
+                <option value="easy">Lako</option>
+                <option value="medium">Srednje</option>
+                <option value="hard">Teško</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="centered">
+        <a href="tetris-igra.html" onclick="startGame(event)"><button id="startGame">Započni igru</button></a>        
+        <a href="tetris-rezultati.html"><button id="viewResults">Pogledaj rezultate</button></a>
+    </div>
+</body>
+</html>

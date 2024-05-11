@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tetris - Igra</title>
+    <link rel="stylesheet" type="text/css" href="tetrisgame.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="tetris-igra.js"></script>
+</head>
+<body>
+    <audio id="backgroundMusic" loop>
+        <source src="tetris-dodatno/tetrismuzika.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button onclick="document.getElementById('backgroundMusic').play()">Play Music</button>
+    <div id="gameArea">
+        <div id="gameBoard"></div>
+        <div id="infoArea">
+            <div id="gameInfo" class="centered">
+                <p>Rezultat: <span id="score">0</span></p>
+                <p>Nivo: <span id="level">1</span></p>
+            </div>
+            <div id="nextBlockArea"></div>
+        </div>
+    </div>
+</body>
+</html>
