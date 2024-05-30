@@ -9,7 +9,7 @@ function startGame(event) {
 
   var selectedLevel = document.getElementById("level").value;
 
-  var url = "tetris-igra.html?blocks=" + encodeURIComponent(JSON.stringify(selectedBlocks)) + "&level=" + encodeURIComponent(selectedLevel);
+  var url = "tetris-game.html?blocks=" + encodeURIComponent(JSON.stringify(selectedBlocks)) + "&level=" + encodeURIComponent(selectedLevel);
   window.location.href = url;
 }
 

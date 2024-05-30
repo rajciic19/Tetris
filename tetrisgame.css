@@ -1,23 +1,43 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-image: url('tetris-dodatno/background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+@font-face {
+    font-family: 'RetroComputer';
+    src: url('tetris-additional/retro_computer_personal_use.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
+body, p, h1, h2, h3, h4, h5, h6, span, a, li, button, input, label, select, option{
+    font-family: 'RetroComputer', sans-serif;
+	  padding: 5px;
+    color: rgb(114, 42, 148);
+}
+
+
+body{
+  margin: 0;
+  padding: 20px;
+  background-image: url('tetris-additional/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff; 
+}
+
+#gameBoard{
+  /*background-color: rgba(6, 7, 21, 0.705);*/
+
+}
+
+
 h1, h2{
     text-align: center;
-    color: #fff;
+    color: rgb(114, 42, 148);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 0 auto;
 }
-
 #lastResultTable{
     text-align: center;
-    color: #fff;
+    color: rgb(114, 42, 148);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     font-size: 20px;
@@ -28,6 +48,7 @@ h1, h2{
     justify-content: center;
     align-items: flex-start;
     margin-top: 110px;
+
 }
 #infoArea {
     display: flex;
@@ -42,7 +63,7 @@ h1, h2{
     font-size: 32px;
     color: #fff;
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 180px;
 }
 
 #gameInfo p {
@@ -53,7 +74,7 @@ h1, h2{
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(6,7,21,255);
 }
 
 #resultTable th,
@@ -68,9 +89,9 @@ button {
     margin: 20px auto;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #6c618686;
+    background-color: rgba(6, 7, 21, 0.705);
     border-radius: 15px;
-    color: #fff;
+    color: rgb(114, 42, 148);
     border: none;
     cursor: pointer;
 }
@@ -85,7 +106,7 @@ button:hover {
 }
 
 form {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(6, 7, 21, 0.705);
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -111,6 +132,7 @@ form select {
     text-align: center;
     line-height: 1.2;
     margin: 0;
+	  color: rgb(114, 42, 148);
 }
 
 .block-options {
@@ -120,7 +142,7 @@ form select {
 }
 
 .info {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(6, 7, 21, 0.705);
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -140,7 +162,7 @@ form select {
 
 #resultTable {
     margin: 20px auto;
-    width: 50%;
+    width: 30%;
 }
 
 
@@ -151,7 +173,7 @@ form select {
 .cell, .next-cell{
     width: 50px; 
     height: 50px; 
-    background-color: rgba(0, 0, 0, 0); 
+    background-color: rgba(0, 0, 0, 0);
     border: 0.5px solid #bdb3b3;
     border-radius: 30px;
 }
@@ -234,33 +256,44 @@ form select {
   }
 
 
-  .level-select {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .level-select select {
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #333;
+.level-select {
+    display: inline-block;
+    position: relative;
+}
+
+.level-select select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    cursor: pointer;
-  }
-  
-  .level-select select:focus {
-    outline: none;
-    border-color: #5c9eff;
-    box-shadow: 0 0 5px rgba(92, 158, 255, 0.5);
-  }
-  
-  .level-select select option {
+    background-color: rgba(6, 7, 21, 0.705);
+    border: 2px solid #060411c7;
+    border-radius: 5px;
+    color: rgb(114, 42, 148);
+    padding: 10px 20px;
     font-size: 16px;
-    background-color: #fff;
-    color: #333;
-  }
+    cursor: pointer;
+    outline: none;
+    font-family: 'RetroComputer', sans-serif;
+}
+
+.level-select::after {
+    content: '\25BC'; /* Down arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: rgb(114, 42, 148);
+}
+
+.level-select select:hover {
+    background-color: rgba(6, 7, 21, 0.705);
+    border-color: rgba(6, 7, 21, 0.705);
+}
+
+.level-select select option {
+    background-color: rgba(6, 7, 21, 0.705);
+    color: rgb(114, 42, 148);
+    padding: 10px;
+    font-family: 'RetroComputer', sans-serif;
+}

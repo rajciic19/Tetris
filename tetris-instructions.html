@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tetris - Uputstvo</title>
+    <title>Tetris - Instructions</title>
     <link rel="stylesheet" type="text/css" href="tetrisgame.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="tetris-uputstvo.js"></script>
+    <script src="tetris-additional/jquery_file.min.js"></script>
+    <script src="tetris-instructions.js"></script>
 </head>
 <body>
     <audio id="backgroundMusic" loop>
-        <source src="tetris-dodatno/tetrismuzika.mp3" type="audio/mpeg">
+        <source src="tetris-additional/tetrismusic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <button onclick="document.getElementById('backgroundMusic').play()">Play Music</button>
     <div class="info">
-        <h1>Tetris - Uputstvo</h1>
-        <p class="centered">Dobrodošli u igru Tetris!</p>
-        <p class="centered">Cilj igre je slaganje blokova koji padaju odozgo kako bi se popunili celi redovi.</p>
-        <p class="centered">Kada se red popuni, on nestaje i svi blokovi iznad se spuštaju.</p>
-        <p class="centered">Igra se završava kada se blokovi nagomilaju do vrha.</p>
-        <h2 class="centered">Kontrole:</h2>
+        <h1>Tetris - Instructions</h1>
+        <p class="centered">Welcome to the game of Tetris!</p>
+        <p class="centered">The goal of the game is to stack falling blocks to fill complete rows.</p>
+        <p class="centered">When a row is filled, it disappears and all blocks above it move down.</p>
+        <p class="centered">The game ends when the blocks pile up to the top.</p>
+        <h2 class="centered">Controlls:</h2>
         <ul class="centered">
-            <li>Levo - Pomeranje bloka ulevo</li>
-            <li>Desno - Pomeranje bloka udesno</li>
-            <li>Dole - Ubrzavanje pada bloka</li>
-            <li>Gore - Rotiranje bloka</li>
+            <li>Left - Move block to the left</li>
+            <li>Right - Move block to the right</li>
+            <li>Down - Speed up block's descent</li>
+            <li>Up - Rotate block</li>
         </ul>
     </div>
 
     <div class="spacing"></div> 
     <form>
-        <h2 class="centered">Podešavanja:</h2>
+        <h2 class="centered">Choose blocks:</h2>
         <div class="block-options">
             <div class="block-row">
               <div class="block-option" data-block="I">
@@ -88,19 +88,19 @@
               </div>
             </div>
           </div>
-            <h2 class="centered">Nivo:</h2>
+            <h2 class="centered">Difficulty:</h2>
             <div class="level-select">
                 <select id="level" name="level">
-                <option value="easy">Lako</option>
-                <option value="medium">Srednje</option>
-                <option value="hard">Teško</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
                 </select>
             </div>
         </div>
     </form>
     <div class="centered">
-        <a href="tetris-igra.html" onclick="startGame(event)"><button id="startGame">Započni igru</button></a>        
-        <a href="tetris-rezultati.html"><button id="viewResults">Pogledaj rezultate</button></a>
+        <a href="tetris-game.html" onclick="startGame(event)"><button id="startGame">Start game</button></a>        
+        <a href="tetris-results.html"><button id="viewResults">Results</button></a>
     </div>
 </body>
 </html>

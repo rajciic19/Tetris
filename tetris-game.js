@@ -320,12 +320,12 @@ function removeCompleteRows(rows) {
     cancelAnimationFrame(requestId);
     $(document).off("keydown", handleKeyPress);
   
-    var playerName = prompt("Unesite svoje ime:");
+    var playerName = prompt("Enter your username:");
     if (playerName) {
       saveResult(playerName, score);
-      window.location.href = "tetris-rezultati.html?name=" + encodeURIComponent(playerName) + "&score=" + score;
+      window.location.href = "tetris-results.html?name=" + encodeURIComponent(playerName) + "&score=" + score;
     } else {
-      window.location.href = "tetris-uputstvo.html";
+      window.location.href = "tetris-instructions.html";
     }
   }
   
@@ -408,24 +408,34 @@ function canMoveLeft(block) {
       drawBlock(currentBlock);
     }
   }
+
   function canMoveRight(block) {
-    var maxCol = 10; 
+    let rightMostColumns = Array(block.shape.length).fill(null);
+
     for (var i = 0; i < block.shape.length; i++) {
-      for (var j = 0; j < block.shape[i].length; j++) {
-        if (block.shape[i][j] === 1) {
-          var nextCol = block.col + j + 1;
-          if (nextCol >= maxCol) {
-            return false; 
-          }
-          var cell = $("#gameBoard").children(".row").eq(block.row + i).children(".cell").eq(nextCol);
-          if (cell.hasClass("occupied")) { 
-            return false;
-          }
+        for (var j = 0; j < block.shape[i].length; j++) {
+            if (block.shape[i][j] === 1) {
+                if (rightMostColumns[i] === null || j > rightMostColumns[i]) {
+                    rightMostColumns[i] = j;
+                }
+            }
         }
-      }
     }
+
+    for (var i = 0; i < rightMostColumns.length; i++) {
+        if (rightMostColumns[i] !== null) {
+            var nextCol = block.col + rightMostColumns[i] + 1;
+            if (nextCol >= 10) return false;
+            var cell = $("#gameBoard .row").eq(block.row + i).find(".cell").eq(nextCol);
+            if (cell.css("background-color") !== "rgba(0, 0, 0, 0)") {
+                return false; 
+            }
+        }
+    }
+
     return true;
-  }
+}
+
 
   function rotateBlock() {
       var rotatedShape = rotateClockwise(currentBlock.shape);
